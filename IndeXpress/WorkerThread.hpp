@@ -33,6 +33,6 @@ private:
 	// Mutex object to synchronize the threads
 	std::mutex m_WThMutexObj;
 	const int m_WorkerThreadCount;
-	// std::vector <std::thread> threads;
+	std::vector <std::thread> threads;
 
 };

@@ -25,12 +25,12 @@ WorkerThread::~WorkerThread()
 
 void WorkerThread::m_CreateWorkerThreads()
 {
-	// Create m_WorkerThreadCount worker threads by looping that times
+	// Create m_WorkerThreadCount worker threads
 	for (int i = 0; i < m_WorkerThreadCount; i++)
 	{
 		std::thread t(&WorkerThread::m_FillTable, this);
 		t.detach();
-		// threads.push_back(std::move(t));
+		threads.push_back(std::move(t));
 	}
 
 }

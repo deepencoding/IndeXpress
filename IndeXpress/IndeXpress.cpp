@@ -20,13 +20,12 @@ bool SearchComplete = false;
 // Synchronizer queue object
 Synchronizer SyncQ;
 
-// C:\Dev\Projects\IndeXpress\IndeXpress\x64\Debug
-// issue : D:\a\_work\1\s\src\vctools\crt\github\stl\src\mutex.cpp(61): mutex destroyed while busy
+
 int main()
 {
 	std::string dir;
 
-	std::cout << "Please Specify the Directory Path: ";
+	std::cout << "Please Specify the Absolute Directory Path: ";
 
 	std::cin >> dir;
 	const fs::path inputPath = dir;
