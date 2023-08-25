@@ -25,14 +25,16 @@ WorkerThread::~WorkerThread()
 
 void WorkerThread::m_CreateWorkerThreads()
 {
-	// Create m_WorkerThreadCount worker threads
+
 	for (int i = 0; i < m_WorkerThreadCount; i++)
 	{
-		std::thread t(&WorkerThread::m_FillTable, this);
-		t.detach();
-		threads.push_back(std::move(t));
+		threads.emplace_back(&WorkerThread::m_FillTable, this);
 	}
 
+	for (std::thread& t : threads)
+	{
+		t.join();
+	}
 }
 
 void WorkerThread::m_AddWordInTable(std::string word)
@@ -55,7 +57,7 @@ void WorkerThread::m_AddWordInTable(std::string word)
 
 void WorkerThread::m_FillTable()
 {
-	while (1)
+	while (!SyncQ.m_GetFileCount())
 	{
 		std::string filename = SyncQ.m_GetFrontFile();
 		if (!(filename.empty()))
