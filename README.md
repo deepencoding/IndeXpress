@@ -36,7 +36,7 @@ These words, along with their counts, are displayed as the final output.
 In essence, this project creates a multi-threaded C++ application that efficiently traverses directories, processes text files, and maintains a shared data structure to count and rank words. The application's end result is a list of the top 10 words and their counts, offering insights into the textual content across the specified directory tree.
 
 ## High Level Architectural Design
-![Design]()
+![Design](https://github.com/deepencoding/IndeXpress/blob/main/architecture.png)
 
 ## Development
 
@@ -60,4 +60,4 @@ IndeXpress -> |\
 
 ### Output of the Program
 
-![Output]()
+![Output](https://github.com/deepencoding/IndeXpress/blob/main/op.png)
