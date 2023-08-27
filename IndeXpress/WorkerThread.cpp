@@ -31,10 +31,6 @@ void WorkerThread::m_CreateWorkerThreads()
 		threads.emplace_back(&WorkerThread::m_FillTable, this);
 	}
 
-	for (std::thread& t : threads)
-	{
-		t.join();
-	}
 }
 
 void WorkerThread::m_AddWordInTable(std::string word)
