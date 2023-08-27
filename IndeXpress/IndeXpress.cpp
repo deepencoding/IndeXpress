@@ -12,7 +12,7 @@
 namespace fs = std::filesystem;
 
 // Number of processor threads
-const unsigned int WThreadCount = 3;
+const unsigned int WThreadCount = 4;
 
 // flag indicating if search of .txt file is completed by SearchThread
 bool SearchComplete = false;
