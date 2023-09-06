@@ -1,4 +1,4 @@
-#include "Synchronizer.hpp"
+﻿#include "Synchronizer.hpp"
 #include "WorkerThread.hpp"
 #include "Searcher.hpp"
 
@@ -23,6 +23,23 @@ Synchronizer SyncQ;
 
 int main()
 {
+	std::cout <<
+		
+		"$$$$$$\\                 $$\\           $$\\   $$\\                                                   \n"
+		"\\_$$  _|                $$ |          $$ |  $$ |                                                  \n"
+		"  $$ |  $$$$$$$\\   $$$$$$$ | $$$$$$\\  \\$$\\ $$  | $$$$$$\\   $$$$$$\\   $$$$$$\\   $$$$$$$\\  $$$$$$$\\ \n"
+		"  $$ |  $$  __$$\\ $$  __$$ |$$  __$$\\  \\$$$$  / $$  __$$\\ $$  __$$\\ $$  __$$\\ $$  _____|$$  _____|\n"
+		"  $$ |  $$ |  $$ |$$ /  $$ |$$$$$$$$ | $$  $$<  $$ /  $$ |$$ |  \\__|$$$$$$$$ |\\$$$$$$\\  \\$$$$$$\\  \n"
+		"  $$ |  $$ |  $$ |$$ |  $$ |$$   ____|$$  /\\$$\\ $$ |  $$ |$$ |      $$   ____| \\____$$\\  \\____$$\\ \n"
+		"$$$$$$\\ $$ |  $$ |\\$$$$$$$ |\\$$$$$$$\\ $$ /  $$ |$$$$$$$  |$$ |      \\$$$$$$$\\ $$$$$$$  |$$$$$$$  |\n"
+		"\\______|\\__|  \\__| \\_______| \\_______|\\__|  \\__|$$  ____/ \\__|       \\_______|\\_______/ \\_______/ \n"
+		"                                                $$ |                                              \n"
+		"                                                $$ |                                              \n"
+		"                                                \\__|                                              \n\n"
+		">> A speedy and reliable word indexing application designed to quickly index each word in large text files, providing instant access to the most frequent words in the directory.\n"
+
+		<< '\n';
+
 	std::string dir;
 
 	std::cout << "Please Specify the Absolute Directory Path: ";
@@ -36,6 +53,8 @@ int main()
 		return -1;
 	}
 
+	std::cout << "Directory does exist." << '\n';
+
 	DWORD p_id = GetCurrentProcessId();
 
 	std::cout << "\nPlease wait while process(" << p_id << ")" << " is processing....\n";
@@ -43,10 +62,12 @@ int main()
 	// Creating Worker Threads
 	WorkerThread WThread(WThreadCount);
 	WThread.m_CreateWorkerThreads();
+	std::cout << "Workerthreads created." << '\n';
 
 	// Creating Search thread to add .txt files in Queue
 	Searcher SearchThObj;
 	SearchThObj.m_StartSearch(dir);
+	std::cout << "Searched." << '\n';
 
 
 	while (1)

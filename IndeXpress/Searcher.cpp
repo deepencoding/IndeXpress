@@ -1,5 +1,6 @@
 #include "Searcher.hpp"
 
+#include <iostream>
 #include <filesystem>
 #include <string>   
 
@@ -15,6 +16,7 @@ extern bool SearchComplete;
 
 Searcher::Searcher()
 {
+    std::cout << "Searcher Object created." << '\n';
 }
 
 Searcher::~Searcher()
@@ -34,6 +36,6 @@ int Searcher::m_StartSearch(std::string filepath)
     }
 
     SearchComplete = true;
-
+    std::cout << "Search completed." << '\n';
     return 0;
 }
