@@ -61,3 +61,16 @@ IndeXpress -> |\
 ### Output of the Program
 
 ![Output](https://github.com/deepencoding/IndeXpress/blob/main/op.png)
+
+# How to use? 
+#### **Using our prebuilt binaries:**
+#### Building from source:
+**You must have a 64 bit system**
+Setup GCC 8.x (Latest MingW-64 release if building on Windows).
+Compile ```IndeXpress.cpp``` using gcc/mingW as
+```g++ IndeXpress.cpp -o IndeXpress``` and then run it just like a prebuilt binary OR just use your favourite IDE for C/C++.
+
+(optional) Install CLion from JetBrains and build & run the project.
+
+# Feedback and Licensing
+This is licensed under GPL v3. All feedback are welcome and you're free to create issues/pull requests on this repository.
