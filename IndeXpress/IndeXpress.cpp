@@ -59,15 +59,15 @@ int main()
 
 	std::cout << "\nPlease wait while process(" << p_id << ")" << " is processing....\n";
 
-	// Creating Worker Threads
-	WorkerThread WThread(WThreadCount);
-	WThread.m_CreateWorkerThreads();
-	std::cout << "Workerthreads created." << '\n';
-
 	// Creating Search thread to add .txt files in Queue
 	Searcher SearchThObj;
 	SearchThObj.m_StartSearch(dir);
 	std::cout << "Searched." << '\n';
+
+	// Creating Worker Threads
+	WorkerThread WThread(WThreadCount);
+	WThread.m_CreateWorkerThreads();
+	std::cout << "Workerthreads created." << '\n';
 
 
 	while (1)
