@@ -67,8 +67,11 @@ IndeXpress -> |\
 #### Building from source:
 **You must have a 64 bit system**
 Setup GCC 8.x (Latest MingW-64 release if building on Windows).
-Compile ```IndeXpress.cpp``` using gcc/mingW as
-```g++ IndeXpress.cpp -o IndeXpress``` and then run it just like a prebuilt binary OR just use your favourite IDE for C/C++.
+Clone the repo ```$ git clone https://github.com/deepencoding/IndeXpress.git```
+Change directory ```$ cd IndeXpress/IndeXpress```
+Compile all source files using gcc/mingW as
+```$ g++ IndeXpress.cpp Searcher.cpp Synchronizer.cpp WorkerThread.cpp -o IndeXpress``` and then
+```$ ./IndeXpress.exe``` OR run it just like a prebuilt binary OR just use your favourite IDE for C/C++.
 
 (optional) Install CLion from JetBrains and build & run the project.
 
