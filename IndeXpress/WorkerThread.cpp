@@ -17,13 +17,11 @@ extern Synchronizer SyncQ;
 WorkerThread::WorkerThread(int WThCnt)
 	: m_WorkerThreadCount(WThCnt)
 {
-	std::cout << "Workerthread Object created." << '\n';
 }
 
 // Destructor
 WorkerThread::~WorkerThread()
 {
-	std::cout << "Workerthread Object destroyed." << '\n';
 }
 
 void WorkerThread::m_CreateWorkerThreads()

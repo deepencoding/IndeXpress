@@ -62,12 +62,17 @@ int main()
 	// Creating Search thread to add .txt files in Queue
 	Searcher SearchThObj;
 	SearchThObj.m_StartSearch(dir);
-	std::cout << "Searched." << '\n';
+
+	if (SyncQ.m_GetFileCount() == 0) {
+		// No .txt files found in directory path
+		// Exiting Code
+		std::cout << "\nNo .txt files found in directory path. Exiting Code.\n";
+		return -1;
+	}
 
 	// Creating Worker Threads
 	WorkerThread WThread(WThreadCount);
 	WThread.m_CreateWorkerThreads();
-	std::cout << "Workerthreads created." << '\n';
 
 
 	while (1)
@@ -76,7 +81,7 @@ int main()
 			break;
 	}
 
-	std::cout << "Search of all txt files completed!\n";
+	std::cout << "Search of all .txt files completed!\n";
 
 	std::multimap <int, std::string, std::greater<int> > MTable;
 	MTable = WThread.m_GetTableEntry();
@@ -98,6 +103,7 @@ int main()
 	}
 
 	std::cout << "***********************************************\n";
+	std::cin.get();
 
 	return 0;
 
